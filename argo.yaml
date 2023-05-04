@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-prod
+  namespace: argocd
+spec:
+  project: default
+  source: 
+    repoURL: https://gitlab.com/kejsiblushi/argocd
+    targetRevision: HEAD
+    path: overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prod
+  syncPolicy:
+    automated:
+      prune: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-stage
+  namespace: argocd
+spec:
+  project: default
+  source: 
+    repoURL: https://gitlab.com/kejsiblushi/argocd
+    targetRevision: HEAD
+    path: overlays/staging
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: stage
+  syncPolicy:
+    automated:
+      prune: true
