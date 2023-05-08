@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source: 
-    repoURL: https://gitlab.com/kejsiblushi/argocd
+    repoURL: https://gitlab.com/kejsiblushi/argocd.git
     targetRevision: HEAD
     path: overlays/prod
   destination:
@@ -24,7 +24,7 @@ metadata:
 spec:
   project: default
   source: 
-    repoURL: https://gitlab.com/kejsiblushi/argocd
+    repoURL: https://gitlab.com/kejsiblushi/argocd.git
     targetRevision: HEAD
     path: overlays/staging
   destination:
